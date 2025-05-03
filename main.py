@@ -22,3 +22,11 @@ if response.status_code == 200:
         print(f"{repo['name']} - {repo['html_url']}")
 else:
     print(f"Error: {response.status_code} - {response.json().get('message')}")
+
+
+for repo in repos:
+    name = repo['name']
+    url = repo['html_url']
+    stars = repo['stargazers_count']
+    forks = repo['forks_count']
+    print(f"{name} - {url} | Stars: {stars} | Forks: {forks}")
